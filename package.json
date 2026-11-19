@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "react-router dev",
     "build": "react-router build",
+    "postbuild": "node -e \"const fs=require('fs');fs.rmSync('dist',{recursive:true,force:true});fs.cpSync('build/client','dist',{recursive:true})\"",
     "preview": "vite preview --outDir build/client",
     "typecheck": "react-router typegen && tsc"
   },
